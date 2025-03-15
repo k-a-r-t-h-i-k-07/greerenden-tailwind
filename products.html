@@ -13,11 +13,12 @@
     <!-- Responsive Navbar -->
     <nav class="bg-green-100 p-3 flex items-center justify-between shadow-xl sticky top-0 z-20">
         <h1 class="text-2xl">Greenden</h1>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-            class="size-6 md:hidden" width="24" height="24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-        </svg>
-
+        <div class="icon cursor-pointer"><svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 md:hidden" width="24"
+                height="24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+        </div>
         <ul class="flex gap-5 text-gray-600 hidden md:flex">
             <li>
                 <a class="hover:underline hover:text-black" href="index.html">Home</a>
@@ -30,19 +31,36 @@
             </li>
         </ul>
     </nav>
+    <!-- Side Navbar -->
+    <section id="sidenav" class="bg-green-100 fixed z-20 top-0 right-0 transition-all duration-1000"
+        style="width: 100%; height:100vh; right: -100%; ">
+        <div class="relative"><img id="backIcon" src="images/right-arrow.png"
+                class="w-14 absolute right-0 px-2 py-2 cursor-pointer">
+        </div>
+        <ul class="flex flex-col items-center gap-8 text-gray-600 py-4">
+            <li>
+                <a class="hover:underline hover:text-black" href="index.html">Home</a>
+            </li>
+            <li>
+                <a class="hover:underline  hover:text-black" href="products.html">Products</a>
+            </li>
+            <li>
+                <a href="contact.html" class="hover:underline  hover:text-black">Contact</a>
+            </li>
+        </ul>
+    </section>
 
     <!-- Products -->
 
     <section class="text-center">
         <h1 class="font-bold text-3xl p-5">Products</h1>
-        <input class="border border-black max-w-screen-2xl p-2 m-2" style="width: 60%;" type="text"
+        <input id="search" class="border border-black max-w-screen-2xl p-2 m-2" style="width: 60%;" type="text"
             placeholder="Search for products">
         <div>
-            <div class="grid grid-cols-2 md:grid-cols-4">
+            <div id="productContainer" class="grid grid-cols-2 md:grid-cols-4">
                 <div class="grid justify-center items-center p-5 ">
                     <img class="hover:shadow-2xl transform hover:-translate-y-1" src="images/product1.png">
-                    <h4>
-                        Iris</h4>
+                    <h4>Iris</h4>
                     <p>$50</p>
                 </div>
                 <div class="grid justify-center items-center p-5 ">
@@ -99,4 +117,5 @@
             <p>&copy; 2025 Greenday.com</p>
         </div>
     </section>
+    <script src="product.js"></script>
 </body>
